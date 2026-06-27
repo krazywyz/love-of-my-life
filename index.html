@@ -113,22 +113,6 @@ main.visible { opacity: 1; }
 .tl-content h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--deep); margin-bottom: 0.3rem; }
 .tl-content p { font-size: 0.9rem; color: #8b5a6f; line-height: 1.7; font-weight: 300; }
 
-/* DISTANCE */
-#distance { background: var(--warm); }
-.distance-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
-@media(max-width:768px){.distance-grid{grid-template-columns:1fr;}}
-.distance-info h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem,4vw,2.5rem); font-weight: 300; font-style: italic; color: var(--deep); line-height: 1.2; margin-bottom: 1.5rem; }
-.distance-stat { display: flex; align-items: center; gap: 1rem; padding: 1.2rem 0; border-bottom: 1px solid rgba(232,167,196,0.25); }
-.distance-stat:last-child { border-bottom: none; }
-.distance-icon { font-size: 1.5rem; width: 48px; height: 48px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(166,77,111,0.1); }
-.distance-stat-info .stat-value { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--deep); }
-.distance-stat-info .stat-label { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rose); margin-top: 0.2rem; }
-.map-card { border-radius: 20px; overflow: hidden; box-shadow: 0 12px 40px rgba(166,77,111,0.15); }
-.map-label { background: white; padding: 1rem 1.4rem; display: flex; align-items: center; gap: 0.7rem; border-bottom: 1px solid #fde8e8; font-size: 0.85rem; color: var(--deep); font-family: 'Cormorant Garamond', serif; }
-.map-iframe { width: 100%; height: 300px; border: none; display: block; }
-.map-open-btn { display: block; width: 100%; background: linear-gradient(135deg,var(--rose),var(--deep)); color: white; text-align: center; padding: 0.85rem; font-family: 'DM Sans', sans-serif; font-size: 0.8rem; letter-spacing: 0.1em; text-decoration: none; transition: opacity 0.3s; }
-.map-open-btn:hover { opacity: 0.88; }
-
 /* LOVE */
 #love { background: var(--ink); color: var(--cream); padding: clamp(4rem,10vw,8rem) clamp(1.5rem,6vw,6rem); }
 .love-inner { max-width: 1100px; margin: 0 auto; }
@@ -197,4 +181,21 @@ main.visible { opacity: 1; }
 
 /* CHALLENGES */
 #challenges { background: var(--cream); }
-.challenge-item { display: flex; gap: 1.5rem; padding: 2rem 0; border-bottom: 1px solid rgba(232,167,196,0.2); align-items: flex-start;
+.challenge-item { display: flex; gap: 1.5rem; padding: 2rem 0; border-bottom: 1px solid rgba(232,167,196,0.2); align-items: flex-start; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.challenge-item.visible { opacity: 1; transform: translateY(0); }
+.challenge-item:last-child { border-bottom: none; }
+.challenge-icon { font-size: 1.8rem; width: 56px; height: 56px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 12px rgba(166,77,111,0.1); }
+.challenge-content h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--deep); margin-bottom: 0.5rem; }
+.challenge-content p { font-size: 0.95rem; line-height: 1.8; color: #8b5a6f; font-weight: 300; }
+
+/* NOTES */
+#notes { background: var(--warm); }
+.notes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+@media(max-width:768px){.notes-grid{grid-template-columns:1fr;}}
+.note-card { background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 8px 30px rgba(166,77,111,0.08); opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.note-card.visible { opacity: 1; transform: translateY(0); }
+.note-card h3 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.4rem; color: var(--deep); margin-bottom: 0.4rem; }
+.note-card .note-subtitle { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rose); margin-bottom: 1.2rem; }
+.note-card textarea { width: 100%; min-height: 160px; border: 1.5px solid var(--blush); border-radius: 14px; padding: 1.2rem; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; line-height: 1.6; color: var(--ink); resize: vertical; transition: border-color 0.3s; }
+.note-card textarea:focus { outline: none; border-color: var(--rose); }
+.note-card textarea::placeholder { color: #e8a7
