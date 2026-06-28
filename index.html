@@ -59,9 +59,8 @@ body { background: var(--cream); color: var(--ink); font-family: 'DM Sans', sans
 .tl-date { font-family: 'Cormorant Garamond', serif; color: var(--rose-deep); font-size: 0.9rem; }
 .tl-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--rose-deep); margin: 0.5rem 0; }
 .tl-excerpt { font-size: 0.95rem; color: #5a3a32; margin: 0.8rem 0; }
-.tl-btn { padding: 0.5rem 1rem; background: transparent; border: 1px solid var(--rose-deep);
-  color: var(--rose-deep); border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
-.tl-btn:hover { background: rgba(244,164,181,0.1); }
+.tl-btn { padding: 0.8rem 2.5rem; background: transparent; border: 1.5px solid var(--rose-deep); color: var(--rose-deep); border-radius: 999px; cursor: pointer; font-size: 0.85rem; letter-spacing: 0.12em; font-family: 'DM Sans', sans-serif; }
+.tl-btn:hover { background: var(--rose-deep); color: white; }
 
 #distance { background: var(--light-pink); }
 .distance-box { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0; }
@@ -99,7 +98,7 @@ body { background: var(--cream); color: var(--ink); font-family: 'DM Sans', sans
 .quiz-option.selected { background: var(--rose); color: white; border-color: var(--rose-deep); }
 .quiz-option.correct { background: #90EE90; border-color: #228B22; }
 .quiz-option.incorrect { background: #FFB6C6; border-color: #C41E3A; }
-.quiz-submit { padding: 0.8rem 2rem; background: var(--rose-deep); color: white; 
+.quiz-submit { padding: 0.8rem 2.5rem; background: var(--rose-deep); color: white; 
   border: none; border-radius: 6px; cursor: pointer; font-size: 0.95rem; margin-top: 1rem; }
 .quiz-submit:hover { background: var(--rose); }
 .quiz-results { text-align: center; margin-top: 2rem; padding: 1.5rem; 
@@ -124,8 +123,8 @@ body { background: var(--cream); color: var(--ink); font-family: 'DM Sans', sans
 
 footer { padding: 3rem 2rem; text-align: center; color: #999; font-size: 0.85rem; }
 
-.scroll-hint { text-align: center; color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; margin-top: 2rem; animation: bounce 2s infinite; }
-@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(10px); } }
+.scroll-hint { text-align: center; color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; margin-top: 2rem; padding: 0.8rem 2.5rem; border: 1.5px solid var(--gold); background: transparent; border-radius: 999px; cursor: pointer; display: inline-block; }
+.scroll-hint:hover { background: var(--gold); color: var(--ink); }
 </style>
 </head>
 <body>
@@ -146,7 +145,7 @@ footer { padding: 3rem 2rem; text-align: center; color: #999; font-size: 0.85rem
       <div style="font-family: 'Cormorant Garamond', serif; color: var(--rose-deep); font-size: 0.9rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">A love letter</div>
       <h1 class="hero-title">Why I Choose You</h1>
       <p class="hero-sub">Every day, every moment, every reason why you matter to me. This is my letter of gratitude, written in our moments.</p>
-      <div class="scroll-hint">↓ Scroll to read ↓</div>
+      <button class="scroll-hint">↓ Scroll to read ↓</button>
     </div>
   </section>
 
@@ -389,9 +388,4 @@ function renderLove() {
 }
 
 function renderQuiz() {
-  const container = document.getElementById('quiz-questions');
-  if(!container) return;
-  
-  container.innerHTML = '';
-  quizQuestions.forEach((q, i) => {
-    const qEl = document.createEl
+  const container = docum
